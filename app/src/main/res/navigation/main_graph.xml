@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/dashboardFragment">
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.bytza.androidcurs08.DashboardFragment"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_dashboardFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_account_graph"
+            app:destination="@id/account_graph" />
+    </fragment>
+    <include app:graph="@navigation/account_graph" />
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.bytza.androidcurs08.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.bytza.androidcurs08.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+</navigation>
